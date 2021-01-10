@@ -23,6 +23,15 @@ def main():
     predicted = model.predict(data)
 
     # plotting the results
+    # 0 is green, 1 is red, 2 is blue
+    visual_data = tuple(zip(x, y, predicted))
+    k0 = [(i[0], i[1]) for i in visual_data if i[2] == 0]
+    k1 = [(i[0], i[1]) for i in visual_data if i[2] == 1]
+    k2 = [(i[0], i[1]) for i in visual_data if i[2] == 2]
+    plt.scatter(k0)
+    plt.show()
+
+
 
 if __name__ == '__main__':
     main()
